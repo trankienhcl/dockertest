@@ -21,14 +21,14 @@ pipeline {
         
         stage('build image') {
             steps {
-                sh 'sudo docker build -t samplewebapp:latest .' 
-                sh 'sudo docker tag samplewebapp tiennguyenhcl/samplewebapp:latest'
+                sh 'docker build -t samplewebapp:latest .' 
+                sh 'docker tag samplewebapp tiennguyenhcl/samplewebapp:latest'
             }    
         }
         
         stage('run container') {
             steps {
-                sh "sudo docker run -d -p 8090:8080 tiennguyenhcl/samplewebapp"
+                sh "docker run -d -p 8090:8080 tiennguyenhcl/samplewebapp"
             }
         }
     }
