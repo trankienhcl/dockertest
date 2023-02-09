@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-LABEL maintainer="Tien"
+LABEL maintainer="kaye"
 
 ADD ./target/LoginWebApp-1.war /usr/local/tomcat/webapps/
 
