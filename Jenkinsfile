@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/NguyenTienHCL/CI-CD-using-Docker.git'
+                git branch: 'master', url: 'https://github.com/trankienhcl/dockertest.git'
             }
         }
         
@@ -22,13 +22,13 @@ pipeline {
         stage('build image') {
             steps {
                 sh 'docker build -t samplewebapp:latest .' 
-                sh 'docker tag samplewebapp tiennguyenhcl/samplewebapp:latest'
+                sh 'docker tag samplewebapp trankienhcl/samplewebapp:latest'
             }    
         }
         
         stage('run container') {
             steps {
-                sh "docker run -d -p 8888:8080 tiennguyenhcl/samplewebapp"
+                sh "docker run -d -p 8888:8080 trankienhcl/samplewebapp"
             }
         }
     }
